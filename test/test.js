@@ -31,6 +31,16 @@ describe('swearjar.censor', function () {
 
 });
 
+describe('swearjar.extract', function () {
+
+  it('should return bad word objects', function () {
+    assert.deepEqual(swearjar.extract('fuck you john doe bitch'), [
+      { word: 'fuck', start: 0, end: 4 },
+      { word: 'bitch', start: 18, end: 23 }
+    ]);
+  });
+});
+
 describe('swearjar.scorecard', function () {
 
   it('should count bad words and categorize them', function () {
